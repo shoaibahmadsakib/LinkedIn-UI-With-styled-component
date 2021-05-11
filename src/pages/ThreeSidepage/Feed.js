@@ -14,6 +14,7 @@ const Feed = () => {
       <div className="feed-item-style">
         <div className="post-feed">
           <Avatar />
+          
           <form>
             <input type="text" placeholder="start a post" />
           </form>
