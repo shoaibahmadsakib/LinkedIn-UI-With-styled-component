@@ -1,9 +1,34 @@
 import React from "react";
-import "./SigninAndSignUp.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import styled from "styled-components";
+
+const SignInComponent = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 50px 5vh;
+  form {
+    margin-top: 50px 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px rgba(71, 71, 71, 0.52);
+    line-height: 60px;
+    border-radius: 5px;
+  }
+  .header-part {
+    line-height: 30px;
+    padding-bottom: 20px;
+
+    h1 {
+      font-size: 30px;
+    }
+    p {
+      font-weight: normal;
+      font-size: small;
+    }
+  }
+`;
 
 const validationSchema = yup.object({
   email: yup
@@ -22,14 +47,14 @@ const SignIn = () => {
       email: "foobar@example.com",
       password: "foobar",
     },
-    
+
     validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
   return (
-    <div className="sign-in">
+    <SignInComponent>
       <form onSubmit={formik.handleSubmit}>
         <div className="header-part">
           <h1>Sign in</h1>
@@ -61,7 +86,7 @@ const SignIn = () => {
           Submit
         </Button>
       </form>
-    </div>
+    </SignInComponent>
   );
 };
 

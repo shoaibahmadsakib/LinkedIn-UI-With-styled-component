@@ -1,8 +1,30 @@
 import React from "react";
-import "./ProfileMain.css";
+import styled from "styled-components";
+
+const ProfileStyled = styled.div`
+  line-height: 26px;
+  text-align: center;
+  padding: 10px 0px;
+
+  .describtion {
+    font-weight: normal;
+    font-size: small;
+  }
+  .otherInfo {
+    padding: 0px 23px;
+    text-align: justify;
+    font-size: 14px;
+
+    .span-color {
+      color: blue;
+      float: right;
+    }
+  }
+`;
+
 const ProfileMain = ({ name, describtion, profileView, postView }) => {
   return (
-    <div className="Profile-style">
+    <ProfileStyled>
       <h1 className="profileHeader">{name}</h1>
       <p className="describtion">{describtion}</p>
       <hr />
@@ -13,7 +35,7 @@ const ProfileMain = ({ name, describtion, profileView, postView }) => {
         {postView}
         <span className="span-color">10</span>
       </p>
-    </div>
+    </ProfileStyled>
   );
 };
 
